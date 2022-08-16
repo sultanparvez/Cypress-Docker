@@ -1,0 +1,11 @@
+version: '3.8'
+services: 
+    greenkart:
+        image: greenkart
+        build: 
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+           -  ./dockerReports:/app/cypress/reports
+        command: ["npm", "test"]
+    
